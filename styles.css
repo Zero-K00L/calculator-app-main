@@ -62,6 +62,7 @@ html {
 
 body {
     margin: 0;
+    background-color: var(--veryDarkDesaturatedBlueMB);
 }
 
 .main {
@@ -127,9 +128,17 @@ body {
     padding: 24px;
     background-color: var(--veryDarkDesaturatedBlueTBKB);
     border-radius: 7px;
+    justify-items: center;
 }
 
 .button-container > button {
+    width: 100%;
+    max-width: 60px;
+    min-height: 60px;
+    background-color: var(--lightGrayishOrangeKB);
+    border-radius: 7px;
+    font-size: 24px;
+    font-family: 'League Spartan', sans-serif;
 
 }
 
