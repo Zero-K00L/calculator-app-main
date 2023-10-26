@@ -1,33 +1,34 @@
 const buttons = document.querySelectorAll('.button');
+const numButtons = document.querySelectorAll('.button-num')
 const userInput = document.getElementById('user-input');
-let inputHistory = []; // Keeps track of input history
-
 
 // Clears user input when page is loaded or refreshed
 document.addEventListener('DOMContentLoaded', function() {
     userInput.value = '';
-    inputHistory = [];
 })
 
 // Attaches an event listener to each button and has it's value entered into the screen as user input.
-buttons.forEach(button => {
+numButtons.forEach(button => {
     button.addEventListener('click', () => {
       const value = button.value;
       userInput.value += value;  
     });
 });
 
-
-// Attach an event listener to the DEL button
+// Event listener for the DEL button
 document.querySelector('button[value="DEL"]').addEventListener('click', () => {
   // Remove the last character from the user input
   userInput.value = userInput.value.slice(0, -1);
 });
 
-// Attach event listeners to the operator buttons (+, -, *, /)
+// Event listeners for the operator buttons (+, -, *, /)
 document.querySelector('button[value="-"]').addEventListener('click', () => {
   userInput.value += '-';
 });
+
+document.querySelector('button[value="+"]').addEventListener('click', () => {
+    userInput.value += '+';
+  });
 
 document.querySelector('button[value="."]').addEventListener('click', () => {
   userInput.value += '.';
@@ -38,21 +39,21 @@ document.querySelector('button[value="/"]').addEventListener('click', () => {
 });
 
 document.querySelector('button[value="x"]').addEventListener('click', () => {
-  userInput.value += '*'; // Use * for multiplication
+  userInput.value += '*'; 
 });
 
-// Attach an event listener to the RESET button
+// Event listener for the RESET button
 document.querySelector('button[value="RESET"]').addEventListener('click', () => {
-  userInput.value = ''; // Clear the user input
+  userInput.value = ''; // Clears user input
 });
 
-// Attach an event listener to the = button for calculation
+// Event listener for the = button for calculation
 document.querySelector('button[value="="]').addEventListener('click', () => {
-  try {
-    userInput.value = eval(userInput.value);
-  } catch (error) {
-    // Handle potential calculation errors
-    userInput.value = 'Error';
-  }
+    try {
+      userInput.value = eval(userInput.value);
+    } catch (error) {
+      // Handle potential calculation errors
+      userInput.value = 'Error';
+    }
 });
 
