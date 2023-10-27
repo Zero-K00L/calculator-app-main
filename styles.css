@@ -128,7 +128,12 @@ body {
     padding: 24px;
     background-color: var(--veryDarkDesaturatedBlueTBKB);
     border-radius: 7px;
-    justify-items: center;
+}
+
+.control-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr); /* 2 columns for RESET and = buttons */
+    gap: 13px;
 }
 
 .button-container > button {
